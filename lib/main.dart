@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:solar_system/planetProvider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(SolarSystem());
 }
 
-class MyApp extends StatelessWidget {
-  //TODO: Terminar de rellenar el Map para que contenga todos los planetas.
-  final Map<String, String> planets = {'earth': 'earth.png', 'venus': 'venus.png', 'mercury' : 'mercury.png'};
+class SolarSystem extends StatefulWidget {
+  @override
+  _SolarSystemState createState() => _SolarSystemState();
+}
+
+class _SolarSystemState extends State<SolarSystem> {
+
+  PlanetProvider provider = PlanetProvider();
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Solar System',
-
-      home: Container(),
-    );
+        title: 'Solar System',
+        home: Scaffold(
+          body: provider.getAllPlanets(),
+        ));
   }
 }
-
-
-
-
