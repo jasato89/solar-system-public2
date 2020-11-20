@@ -5,18 +5,13 @@ void main() {
   runApp(SolarSystem());
 }
 
-class SolarSystem extends StatefulWidget {
-  @override
-  _SolarSystemState createState() => _SolarSystemState();
-}
 
-class _SolarSystemState extends State<SolarSystem> {
-
+class SolarSystem extends StatelessWidget {
   PlanetProvider provider = PlanetProvider();
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
         title: 'Solar System',
         home: Scaffold(
@@ -24,3 +19,7 @@ class _SolarSystemState extends State<SolarSystem> {
         ));
   }
 }
+
+
+
+
