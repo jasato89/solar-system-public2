@@ -1,14 +1,13 @@
+
 import 'package:flutter/material.dart';
 import 'package:solar_system/planet.dart';
 import 'package:strings/strings.dart';
 
 class DetailView extends StatelessWidget {
-  Planet planet;
-
-  DetailView(this.planet);
 
   @override
   Widget build(BuildContext context) {
+    Planet planet = ModalRoute.of(context).settings.arguments;
     return MaterialApp(
       title: planet.name,
       home: Container(

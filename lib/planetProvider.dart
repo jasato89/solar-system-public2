@@ -14,29 +14,11 @@ class PlanetProvider {
     Planet("uranus", "uranus.png", 2871, "Uranus—seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side.")
   ];
 
-  Widget getAllPlanets() {
-    return ListView.separated(
-        itemCount: planets.length,
-        separatorBuilder: (BuildContext context, int index) => Divider(
-          height: 3,
-          color: Colors.black,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            leading: Image.asset('resources/images/${planets[index].image}'),
-            title: Text('${capitalize(planets[index].name)}'),
-            subtitle:
-                Text('${planets[index].distance} millions of kms to the Sun'),
-            trailing: Icon(Icons.keyboard_arrow_right),
-            contentPadding:
-                EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-            dense: true,
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => DetailView(planets[index]),));
-            },
-          );
-        });
-  }
+   getPlanets(){
+     return planets;
+}
+
+
 
 
 }
